@@ -1,9 +1,19 @@
 <script setup>
-import { computed } from 'vue';
-import store from '../app/store';
+import { onMounted, ref } from 'vue';
+import axiosInstance from '../utils/axios';
 
-const meals = computed(() => store.state.meals)
+const meals = ref([]);
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+
+onMounted(async () => {
+    try {
+        const ingrediants = await axiosInstance.get("/list.php?i=list");
+        meals.value = ingrediants?.data?.meals;
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 </script>
 
 <template>
@@ -18,6 +28,8 @@ const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
         }" v-for="letter of letters" :key="letter">{{ letter
 }}</router-link>
     </div>
+
+    <pre>{{ meals }}</pre>
 </template>
 
 <style scoped></style>
