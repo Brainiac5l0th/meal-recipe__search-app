@@ -28,8 +28,6 @@ onMounted(async () => {
         }" v-for="letter of letters" :key="letter">{{ letter
 }}</router-link>
     </div>
-
-    <pre>{{ meals }}</pre>
 </template>
 
 <style scoped></style>
