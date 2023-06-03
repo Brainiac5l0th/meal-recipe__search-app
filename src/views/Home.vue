@@ -17,11 +17,6 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="flex p-8 justify-center">
-        <input type="text" class="rounded-md border-gray-500 font-semibold w-full md:w-3/4"
-            placeholder="search for meals" />
-    </div>
-
     <div class="flex justify-center gap-2 mt-2 wrap">
         <router-link :to="{
             name: 'byLetter', params: { letter }
