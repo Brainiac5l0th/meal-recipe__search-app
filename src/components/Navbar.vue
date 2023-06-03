@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-    <header class="flex justify-between sticky top-0 w-full h-16 lg:w-3/4 m-auto md:px-4 bg-gray-50 rounded-md">
+    <header class="flex justify-between sticky top-0 w-full h-16 lg:w-3/4 m-auto md:px-4 bg-gray-50 rounded-md z-50">
         <router-link :to="{ name: 'Home' }" class="inline-flex items-center font-semibold text-xl px-2 h-full">
             Meals
         </router-link>

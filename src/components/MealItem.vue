@@ -1,16 +1,25 @@
 <script setup>
 const props = defineProps(['mealInfo']);
-
 </script>
 
 <template>
-    <img :src="mealInfo.strMealThumb" :alt="mealInfo.strMeal"
-        class="h-48   object-cover w-full translate transition duration-300 ease-in-out hover:scale-[1.03]" />
+    <img :src="mealInfo?.strMealThumb" :alt="mealInfo?.strMeal"
+        class="relative h-48 lg:h-52 2xl:h-58 object-cover w-full translate transition duration-300 ease-in-out hover:scale-[1.01]" />
+
     <div class="px-2 md:px-4">
-        <h3 class="my-2 md:my-4 font-semibold">{{ mealInfo.strMeal }}</h3>
+        <div class="flex flex-wrap justify-between align-center my-2 md:my-4">
+            <h3 class="font-semibold">{{ mealInfo?.strMeal }}</h3>
+            <p v-show="mealInfo?.strArea?.toLowerCase() !== 'unknown'"
+                class="text-sm border px-2 rounded-md border-yellow-600 text-yellow-600">{{
+                    mealInfo?.strArea }}
+            </p>
+        </div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui odio omnis excepturi itaque aliquam? Vel quisquam
+            distinctio placeat cum fugiat.</p>
         <div class="my-2 md:my-4 flex justify-between">
-            <a :href="mealInfo.strYoutube" target="_blank" class="border border-red-500 px-2 text-red-500">Youtube</a>
-            <!-- <router-link>See More</router-link> -->
+            <a :href="mealInfo?.strYoutube" target="_blank"
+                class="border rounded-md border-red-500 px-2 bg-red-600 text-white font-semibold">Youtube</a>
+            <router-link to="/" class="hover:text-blue-500 hover:underline">See Details</router-link>
         </div>
     </div>
 </template>
