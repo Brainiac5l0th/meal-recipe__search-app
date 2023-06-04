@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import axiosInstance from '../utils/axios';
 
 const meals = ref([]);
-const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+
 
 onMounted(async () => {
     try {
@@ -16,13 +16,6 @@ onMounted(async () => {
 
 </script>
 
-<template>
-    <div class="flex justify-center gap-2 mt-2 wrap">
-        <router-link :to="{
-            name: 'byLetter', params: { letter }
-        }" v-for="letter of letters" :key="letter">{{ letter
-}}</router-link>
-    </div>
-</template>
+<template></template>
 
 <style scoped></style>
