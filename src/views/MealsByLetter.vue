@@ -10,7 +10,7 @@
             </router-link>
         </div>
         <div
-            class="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 rounded-md cursor-pointer mt-5">
+            class="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 rounded-md cursor-pointer my-5">
             <div v-for="meal of letterMeals" :key="meal.idMeal"
                 class="shadow-md rounded translate transition duration-300 ease-in-out hover:scale-[1.02] overflow-hidden min-w-[200] antialiased">
                 <MealItem :mealInfo="meal" />
