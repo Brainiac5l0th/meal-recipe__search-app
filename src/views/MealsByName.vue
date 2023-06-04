@@ -1,8 +1,12 @@
 <script setup>
 import { computed } from '@vue/reactivity';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { useRoute } from "vue-router";
 import store from "../app/store";
 import MealItem from "../components/MealItem.vue";
+
+const route = useRoute();
+
 const keyword = ref("");
 //get searched result from the store
 const meals = computed(() => store.state.searchedMeals);
@@ -11,6 +15,15 @@ const meals = computed(() => store.state.searchedMeals);
 function getSearchMeals() {
     store.dispatch("searchMeals", keyword.value);
 }
+
+onMounted(() => {
+    //get keyword value from the params
+    keyword.value = route.params.name;
+
+    if (keyword.value) {
+        getSearchMeals();
+    }
+})
 </script>
 
 <template>
@@ -26,7 +39,7 @@ function getSearchMeals() {
         <div
             class="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 rounded-md cursor-pointer mt-5">
             <div v-for="meal of meals" :key="meal.idMeal"
-                class="shadow-md rounded translate transition duration-300 ease-in-out hover:scale-[1.02] overflow-hidden min-w-[200]">
+                class="shadow-md rounded translate transition duration-300 ease-in-out hover:scale-[1.02] overflow-hidden min-w-[200] antialiased">
                 <MealItem :mealInfo="meal" />
             </div>
         </div>

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import DefaultLayout from "../components/DefaultLayout.vue";
 import GuestLayout from "../components/GuestLayout.vue";
 import Home from "../views/Home.vue";
+import MealDetails from "../views/MealDetails.vue";
 import MealsByIngrediants from "../views/MealsByIngrediants.vue";
 import MealsByLetter from "../views/MealsByLetter.vue";
 import MealsByName from "../views/MealsByName.vue";
@@ -31,6 +32,11 @@ const routes = [
                 path: "/by-ingrediants/:ingrediant?",
                 name: "byIngrediants",
                 component: MealsByIngrediants
+            },
+            {
+                path: "/meals/:id",
+                name: "mealDetails",
+                component: MealDetails
             }
         ]
     },
