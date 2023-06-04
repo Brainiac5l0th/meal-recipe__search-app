@@ -23,7 +23,6 @@ const props = defineProps(['mealInfo']);
             <div class="my-2 md:my-4 flex justify-between">
                 <a :href="mealInfo?.strYoutube" target="_blank"
                     class="border rounded-md border-red-500 px-2 bg-red-600 text-white font-semibold">Youtube</a>
-                <router-link to="/" class="hover:text-blue-500 hover:underline">See Details</router-link>
             </div>
         </div>
     </router-link>
