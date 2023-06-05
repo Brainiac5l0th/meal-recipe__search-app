@@ -6,7 +6,7 @@
             Meals
         </router-link>
         <div class="flex md:gap-3 hidden md:inline-flex">
-            <router-link :to="{ name: 'byName', params: name }" class="px-2 inline-flex items-center hover:bg-purple-50">
+            <router-link :to="{ name: 'byName' }" class="px-2 inline-flex items-center hover:bg-purple-50">
                 Search Meals
             </router-link>
             <router-link :to="{ name: 'byLetter' }" class="px-2 inline-flex items-center hover:bg-purple-50">
