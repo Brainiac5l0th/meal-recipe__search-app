@@ -1,6 +1,5 @@
 <template>
-    <p
-        class="bg-slate-200 px-4 py-3 rounded hover:bg-slate-300 hover:shadow-md cursor-pointer text-center font-semibold text-wrap items-center">
+    <p class="bg-slate-200 px-4 py-3 rounded hover:bg-slate-300 hover:shadow-md cursor-pointer text-center font-semibold">
         <slot></slot>
     </p>
 </template>
