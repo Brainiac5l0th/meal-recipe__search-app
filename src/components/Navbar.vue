@@ -13,7 +13,7 @@
                 Meals By Letter
             </router-link>
             <router-link :to="{ name: 'byIngrediants' }" class="px-2 inline-flex items-center hover:bg-purple-50">
-                Meals By Ingrediants
+                Ingrediants
             </router-link>
         </div>
     </header>
